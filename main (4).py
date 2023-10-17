@@ -1,19 +1,24 @@
-class Player:
-  def play(self):
-    print("The player is playing cricket.")
+# 1.1 Implement a recursive function to celculate the factorial of a given number
 
-class Batsman:
-  def play(self):
-    print("The batsman is batting.")
+"""
+1! = 1 × 1
+2! = 2 × 1! --->2
+3! = 3× 2! --->3 × 2 × 1
+.
+.
+10! = 10 × 9!¡ --->10 × 9 × 8 ×...×1
 
-class Bowler:
-  def play(self):
-    print("The bowler is bowling.")
+Formula - no × (n-1 )!
+"""
 
-# Create objects of Batsman and Bowler classes
-batsman=Batsman()
-bowler=Bowler()
 
-# Call the play()method for each object
-batsman.play()
-bowler.play()
+def fact_rec(n):
+ if n==0 or n==1:
+   return 1
+ else:
+    return n*fact_rec(n-1)
+                     
+number = int(input("Enter a value :"))
+res = fact_rec(number)
+       
+print("The factorial of {} is {}".format(number,res)) 
